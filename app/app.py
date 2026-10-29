@@ -153,7 +153,7 @@ def pantalla_login() -> None:
                 return
 
             with st.form("formulario_inicio_sesion"):
-                usuario_ingresado = st.text_input("Usuario", placeholder="Ingresa tu usuario")
+                usuario_ingresado = st.text_input("Usuario", placeholder="Ingresa tu usuario").strip()
                 contrasena_ingresada = st.text_input("Contraseña", type="password", placeholder="••••••••")
                 st.markdown("<div style='margin-top: 0.75rem;'></div>", unsafe_allow_html=True)
                 boton_ingreso = st.form_submit_button("Iniciar Sesión", use_container_width=True)
