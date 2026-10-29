@@ -1,1 +1,16 @@
 Cambios hechos al codigo...
+para poder correr todo sin problemas hayy que hacer lo siguiente: 
+
+1- antes de entrar en la carpeta raiz, ejecuta: 
+* source venv/bin/activate
+
+2- una vez estando dentro del entorno virtual instalamos: 
+* pip install pandas streamlit
+* pip install streamlit
+
+3- una vez instalado ejecutamos 
+* streamlit run app/app.py
+
+si le pide un correo la consola simplemente presiona enter
+luego se abrira todo el puerto en la web con la interfaz hasta el momento, ayudame a modificar el diseño y hacerle pruebas, USAMOS def para casi todo
+y busca la documentacion de "streamlit"
