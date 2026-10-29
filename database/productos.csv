@@ -1,2 +1,2 @@
-id,empresa_id,nombre,precio,stock
-1,1,Iphone 13,1200000,50
+id,empresa_id,nombre,precio,stock,tipo_impuesto,impuesto
+1,1,Iphone 13,1200000,50,19,

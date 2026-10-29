@@ -23,13 +23,18 @@ def mostrar_modulo_pos(
     # 1. Datos del cliente
     with st.container(border=True):
       st.markdown("#### 1. Datos del Cliente")
-      sub_columna_nombre, sub_columna_documento = st.columns(2)
+      sub_columna_nombre, sub_columna_documento, sub_columna_correo = st.columns(3)
       with sub_columna_nombre:
         nombre_cliente = st.text_input(
             "Nombre o Razón Social", value="Consumidor Final"
         )
       with sub_columna_documento:
         documento_cliente = st.text_input("Cédula o NIT", value="222222222222")
+
+      with sub_columna_correo:
+        correo_cliente = st.text_input(
+            "Correo Electrónico (*)", value="", placeholder="ejemplo@correo.com"
+        )
 
     # 2. Selección de artículo y cálculo individual
     with st.container(border=True):
@@ -86,8 +91,14 @@ def mostrar_modulo_pos(
       boton_generar = st.button(
           "✅ Generar Factura", type="primary", use_container_width=True
       )
+      
       if boton_generar:
-        st.success(
-            f"Factura emitida exitosamente por un total de"
-            f" ${total_factura:,.0f}."
-        )
+        # Validación del correo electrónico obligatorio
+        if not correo_cliente.strip():
+          st.error("⚠️ El campo de Correo Electrónico es obligatorio para generar la factura.")
+        else:
+          st.success(
+              f"Factura emitida exitosamente por un total de"
+              f" ${total_factura:,.0f}."
+          )
+          # Aquí puedes agregar posteriormente la lógica para guardar la factura o limpiar datos
